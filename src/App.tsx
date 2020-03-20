@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TiGroup size={82} />
+        <TiGroup size={96} />
         <h1>Educacion Digital</h1>
 	<p>
 	  El patio de intercambio de conocimientos mas grande do mondo
@@ -19,7 +19,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Quienes somos?
+          ¨Quienes somos?
         </a>
       </header>
     </div>
