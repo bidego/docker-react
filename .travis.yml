@@ -3,7 +3,7 @@ services:
         - docker
 before_install:
         - wget -qO- https://toolbelt.heroku.com/install.sh | sh
-        - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --pasword-stdin registry.heroku.com      
+        - echo "${HEROKU_PASSWORD}" | docker login -u "${HEROKU_USERNAME}" --pasword-stdin registry.heroku.com      
         - docker build -t bidego/docker-react -f Dockerfile.dev .
 script:
         - docker run -e CI=true bidego/docker-react npm run test
