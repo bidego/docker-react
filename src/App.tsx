@@ -2,25 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { TiGroup } from 'react-icons/ti';
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hellloooow</h1>
+        <TiGroup size={82} />
+        <h1>Educacion Digital</h1>
 	<p>
-          Edit <code>src/App.js</code> and save to reload.
-	</p>
-	<p>
-	  Edit any file in <code>./</code> path and ill re-build
+	  El patio de intercambio de conocimientos mas grande do mondo
         </p>
         <a
           className="App-link"
-          href="https://docker.io"
+          href="https://google.com?q=Educacion+Digital"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn react
+          Quienes somos?
         </a>
       </header>
     </div>
