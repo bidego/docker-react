@@ -7,16 +7,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h1>Hellloooow</h1>
+	<p>
           Edit <code>src/App.js</code> and save to reload.
+	</p>
+	<p>
+	  Edit any file in <code>./</code> path and ill re-build
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://docker.io"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn react
         </a>
       </header>
     </div>
