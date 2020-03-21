@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import Btn from './Btn';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { TiUser, TiGlobeOutline } from 'react-icons/ti';
 
 const Navigator = (props:any) => {
@@ -24,10 +23,6 @@ const Navigator = (props:any) => {
                 <NavDropdown.Item href="#action/3.4">Acerca de EDi</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="¿Que desea buscar?" className="mr-sm-2" />
-                <Btn variant="outline-success">Buscar</Btn>
-            </Form>
             </Navbar.Collapse>
         </Navbar>
     )
