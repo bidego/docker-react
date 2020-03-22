@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useReducer, useState } from 'react';
 import { Container, Form, FormControl, FormLabel, ButtonGroup } from 'react-bootstrap';
 import { BtnConfirm } from '../components'
 import { TiKeyOutline } from 'react-icons/ti';
+import * as authActions from '../store/actions/auth';
+import { useDispatch } from 'react-redux';
 
-const Login = (props:any) => {    
+const Login = (props:any) => {
+    const dispatch = useDispatch();
+
+    let [ error, setError ] = useState();
+    let [ isLoading, setIsLoading ] = useState(false);
+    let [ isSignup, setIsSignup ] = useState(false);
+
+    const authHandler = async() => {
+        let action;
+        const DocumentInputs:any = document.getElementsByTagName("Input");
+        console.log(DocumentInputs)
+        let { email, password } = DocumentInputs;
+        action = authActions.login(email.value, password.value);
+        setIsLoading(true);
+        try {
+            await dispatch(action);
+            document.location.href = "/";
+        } catch (error) {
+            setError(error.message);
+            setIsLoading(false);
+        }
+    };
+
     return (
         <Container className="Login-content">
             <section className="Login-block">
@@ -16,14 +40,16 @@ const Login = (props:any) => {
                 <Form>
                     <FormLabel>Usuario</FormLabel>
                     <FormControl
-                        type="text" placeholder="Usuario"/>
+                        name="email"
+                        type="text" placeholder="Email"/>
                     <FormLabel>Contraseña</FormLabel>
-                    <FormControl  
+                    <FormControl
+                        name="password"  
                         type="password"
                         placeholder="Contraseña" />
                     <ButtonGroup size="lg" className="mt-3 pull-right">
                         <BtnConfirm className="pull-right">Reset</BtnConfirm>
-                        <BtnConfirm className="ml-3 pull-right">Confirmar</BtnConfirm>
+                        <BtnConfirm className="ml-3 pull-right" onClick={authHandler}>Confirmar</BtnConfirm>
                     </ButtonGroup>
                 </Form>
             </section>

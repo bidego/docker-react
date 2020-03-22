@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, ButtonGroup, Form, FormControl, FormLabel } from 'react-bootstrap';
 import { BtnConfirm } from '../components'
 import { TiUser, TiPen } from 'react-icons/ti';
+import { useDispatch } from 'react-redux';
+import * as authActions from '../store/actions/auth';
 
 const Signup = (props:any) => {    
+    const dispatch = useDispatch();
+
+    let [ error, setError ] = useState();
+    let [ isLoading, setIsLoading ] = useState(false);
+
+    const authHandler = async() => {
+        let action;
+        const DocumentInputs:any = document.getElementsByTagName("Input");
+        let { email, password } = DocumentInputs;
+        action = authActions.signUp(email.value, password.value);
+        setIsLoading(true);
+        try {
+            await dispatch(action);
+        } catch (error) {
+            setError(error.message);
+            setIsLoading(false);
+        }
+    };
+
     return (
         <Container className="Signup-content">
             <section className="Signup-block">
@@ -16,22 +37,24 @@ const Signup = (props:any) => {
                 <Form>
                     <FormLabel>Usuario</FormLabel>
                     <FormControl
-                        type="text" placeholder="Usuario"/>
+                        type="text" placeholder="Usuario" name="email" />
                     <FormLabel>Contraseña</FormLabel>
                     <FormControl  
                         type="password"
-                        placeholder="Contraseña" />
+                        placeholder="Contraseña"
+                        name="password" />
                     <FormLabel>Confirma contraseña</FormLabel>
                     <FormControl  
                         type="re-password"
                         placeholder="Confirma contraseña" />
                     <ButtonGroup size="lg" className="mt-3 pull-right">
                         <BtnConfirm className="pull-right">Reset</BtnConfirm>
-                        <BtnConfirm className="ml-3 pull-right">Confirmar</BtnConfirm>
+                        <BtnConfirm onClick={authHandler} className="ml-3 pull-right">Confirmar</BtnConfirm>
                     </ButtonGroup>
                 </Form>
             </section>
-        </Container>    )    
+        </Container>
+    )    
 }
 
 export default Signup;

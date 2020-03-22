@@ -3,9 +3,23 @@ import { Nav, NavDropdown, ButtonGroup } from 'react-bootstrap';
 import { TiUser } from 'react-icons/ti';
 import { Btn } from './';
 import { Link } from 'react-router-dom';
+import * as moment from 'moment';
 
-const NavProfile = (props:any) => {    
-    if (!false) {
+const NavProfile = (props:any) => {
+
+    let stringUserData:any = sessionStorage.getItem('userData');
+    let userData:any = JSON.parse(stringUserData);
+    let expiryDate:any;
+    if (userData && userData.expiryDate) {
+        expiryDate = moment.parseZone(userData.expiryDate);
+    }
+    if (userData && userData.expiryDate && expiryDate.isSameOrBefore(moment.now())) {
+        let f = new Date(expiryDate);
+        console.log("borrando" + f);
+        sessionStorage.clear();
+        userData = null;
+    }
+    if (!sessionStorage.getItem("userData")) {
         return (
             <Nav>
                 <ButtonGroup className="Button-group">
