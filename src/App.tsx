@@ -30,6 +30,7 @@ function App() {
       <Router>
         <Navigator />
         <Switch>
+          <Route exact path="/login" component={Home} />
           <Route path="/login">
             <Login />
           </Route>
@@ -48,7 +49,6 @@ function App() {
           <Route path="/projects">
             <Projects />
           </Route>
-          <Home />
         </Switch>
       </Router>
     </Provider>
