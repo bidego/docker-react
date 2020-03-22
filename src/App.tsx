@@ -22,7 +22,9 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 function App() {
-  
+  useEffect(()=> {
+    document.title = "Educacion Digital";
+  });
   return (
     <Provider store={store}>
       <Router>
