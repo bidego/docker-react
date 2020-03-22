@@ -31,24 +31,12 @@ function App() {
         <Navigator />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/rooms">
-            <Rooms />
-          </Route>
-          <Route path="/courses">
-            <Courses />
-          </Route>
-          <Route path="/projects">
-            <Projects />
-          </Route>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/home" component={Home} />
+          <Route path="/rooms" component={Rooms} />
+          <Route path="/courses" component={Courses} />
+          <Route path="/projects" component={Projects} />
         </Switch>
       </Router>
     </Provider>
