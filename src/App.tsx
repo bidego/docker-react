@@ -3,13 +3,19 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Navigator, Btn } from './components/';
-import { Home, Rooms, Courses, Projects } from './screens';
+import { Home, Rooms, Courses, Projects, Login, Signup } from './screens';
 
 function App() {
   return (
     <Router>
       <Navigator />
       <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
         <Route path="/home">
           <Home />
         </Route>

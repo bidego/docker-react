@@ -22,7 +22,7 @@ const Home = (props:any) => {
             <FormControl type="text" placeholder="¿Que desea buscar?" className="mr-sm-2" />
             <Btn variant="outline-success">Buscar</Btn>
             </Form>
-          </header>
+        </header>
     )
 }
 
