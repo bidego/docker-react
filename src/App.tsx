@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -22,6 +22,9 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 function App() {
+  useEffect(()=> {
+    document.title = "Educacion Digital";
+  });
   return (
     <Provider store={store}>
       <Router>
