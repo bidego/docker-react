@@ -30,7 +30,7 @@ function App() {
       <Router>
         <Navigator />
         <Switch>
-          <Route exact path="/login" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/login">
             <Login />
           </Route>
