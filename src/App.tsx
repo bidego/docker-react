@@ -28,6 +28,7 @@ function App() {
         <Route path="/projects">
           <Projects />
         </Route>
+        <Home />
       </Switch>
     </Router>
   );
