@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { TiGroup } from 'react-icons/ti';
 import { NavProfile } from './';

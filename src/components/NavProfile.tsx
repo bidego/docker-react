@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Nav, NavDropdown, ButtonGroup } from 'react-bootstrap';
 import { TiUser } from 'react-icons/ti';
 import { Btn } from './';

@@ -8,20 +8,20 @@ import * as authActions from '../store/actions/auth';
 const Signup = (props:any) => {    
     const dispatch = useDispatch();
 
-    let [ error, setError ] = useState();
-    let [ isLoading, setIsLoading ] = useState(false);
+//    let [ error, setError ] = useState();
+//    let [ isLoading, setIsLoading ] = useState(false);
 
     const authHandler = async() => {
         let action;
         const DocumentInputs:any = document.getElementsByTagName("Input");
         let { email, password } = DocumentInputs;
         action = authActions.signUp(email.value, password.value);
-        setIsLoading(true);
+//        setIsLoading(true);
         try {
             await dispatch(action);
         } catch (error) {
-            setError(error.message);
-            setIsLoading(false);
+//            setError(error.message);
+//            setIsLoading(false);
         }
     };
 

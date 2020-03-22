@@ -54,7 +54,7 @@ export const updateProject = (id:any,title:any,description:any,imageUrl:any) => 
     return async (dispatch:any,getState:any) =>  {
         let { token } = getState().auth;
         let { userProjects } = getState().projects;
-        let { price } = userProjects.find((proj:any)=>proj.id==id);
+        let { price } = userProjects.find((proj:any)=>proj.id===id);
         try {
             let response = await fetch(`https://rn-shop-app-80b0f.firebaseio.com/products/${id}.json?auth=${token}`, {
                 method: 'PATCH',
