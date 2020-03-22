@@ -6,6 +6,10 @@ import { Btn } from '../components';
 const Home = (props:any) => {
     return(
         <header className="App-header">
+            <Form inline className="Search-content">
+            <FormControl type="text" placeholder="¿Que desea buscar?" className="mr-sm-2" />
+            <Btn variant="outline-success">Buscar</Btn>
+            </Form>
             <TiGroup size={96} />
             <h1>Educacion Digital</h1>
             <p>
@@ -18,10 +22,6 @@ const Home = (props:any) => {
                 rel="noopener noreferrer"
                 hidden
             >Entrá</a>
-            <Form inline>
-            <FormControl type="text" placeholder="¿Que desea buscar?" className="mr-sm-2" />
-            <Btn variant="outline-success">Buscar</Btn>
-            </Form>
         </header>
     )
 }

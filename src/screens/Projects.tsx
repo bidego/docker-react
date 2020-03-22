@@ -1,28 +1,21 @@
 import React from 'react';
-import { Form, FormControl } from 'react-bootstrap';
-import { TiGroup } from 'react-icons/ti';
+import { Container, Form, FormControl } from 'react-bootstrap';
 import { Btn } from '../components';
-
+import { TiFolderOpen } from 'react-icons/ti';
 const Projects = (props:any) => {
     return(
-        <header className="App-header">
-            <TiGroup size={96} />
-            <h1>Educacion Digital</h1>
-            <p>
-                El patio de intercambio de conocimientos
-            </p>
-            <a
-                className="App-link"
-                href="https://google.com?q=Educacion+Digital"
-                target="_blank"
-                rel="noopener noreferrer"
-                hidden
-            >Entrá</a>
-            <Form inline>
-            <FormControl type="text" placeholder="¿Que desea buscar?" className="mr-sm-2" />
-            <Btn variant="outline-success">Buscar</Btn>
-            </Form>
-          </header>
+        <Container className="Screen-content">
+            <section className="Screen-left">
+                <TiFolderOpen size={42} />
+                <h2>&nbsp;&nbsp;Proyectos</h2>
+            </section>
+            <section className="Screen-right">
+                <Form inline>
+                    <FormControl type="text" placeholder="Proyectos" className="mr-sm-2" />
+                    <Btn variant="outline-success">Buscar</Btn>
+                </Form>
+            </section>
+        </Container>
     )
 }
 

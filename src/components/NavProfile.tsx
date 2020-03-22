@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Nav, NavDropdown } from 'react-bootstrap';
+import { Nav, NavDropdown, ButtonGroup } from 'react-bootstrap';
 import { TiUser } from 'react-icons/ti';
 import { Btn } from './';
 import { Link } from 'react-router-dom';
@@ -8,12 +8,14 @@ const NavProfile = (props:any) => {
     if (!false) {
         return (
             <Nav>
-                <Link to="/login">
-                    <Btn className="ml-2" variant="outline-secondary" name="Log In">Log In</Btn>
-                </Link>
-                <Link to="/signup">
-                    <Btn className="ml-2" variant="outline-secondary" name="Sign In">Sign In</Btn>
-                </Link>
+                <ButtonGroup className="Button-group">
+                    <Link to="/login">
+                        <Btn className="ml-2" variant="outline-secondary" name="Log In">Log In</Btn>
+                    </Link>
+                    <Link to="/signup">
+                        <Btn className="ml-2" variant="outline-secondary" name="Sign In">Sign In</Btn>
+                    </Link>
+                </ButtonGroup>
             </Nav>
         )
     }
