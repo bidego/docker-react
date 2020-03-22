@@ -8,7 +8,7 @@ before_install:
         - docker tag bidego/docker-react:0.0.1
           registry.heroku.com/$HEROKU_APP_NAME/web
 script:
-        - docker run -e CI=true bidego/docker-react npm run test
+        - docker run -e CI=true bidego/docker-react:0.0.1 npm run test
 deploy:
         provider: script
         script:
